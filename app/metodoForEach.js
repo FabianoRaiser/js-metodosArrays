@@ -1,5 +1,6 @@
 
 function exibeLivroTela(listaLivros) {
+    elementoInsertLivros.innerHTML = '';
     listaLivros.forEach(livro => {
         elementoInsertLivros.innerHTML += `
         <div class="livro">
