@@ -2,9 +2,11 @@
 function exibeLivroTela(listaLivros) {
     elementoInsertLivros.innerHTML = '';
     listaLivros.forEach(livro => {
+      // let disponibilidade = verificaDisponibilidade(livro);
+      let disponibilidade = livro.quantidade > 0 ? 'livro__imagens' : 'livros__imagens indisponivel';
         elementoInsertLivros.innerHTML += `
         <div class="livro">
-        <img class="livro__imagem" src="${livro.imagem}" alt="${livro.alt}"/>
+        <img class="${disponibilidade}" src="${livro.imagem}" alt="${livro.alt}"/>
         <h2 class="livro__titulo">
           ${livro.titulo}
         </h2>
@@ -17,3 +19,11 @@ function exibeLivroTela(listaLivros) {
         `
     });
 }
+
+// function verificaDisponibilidade(livro) {
+//   if (livro.quantidade > 0) {
+//     return 'livro__imagens';
+//   } else {
+//     return 'livros__imagens indisponivel';
+//   }
+// }

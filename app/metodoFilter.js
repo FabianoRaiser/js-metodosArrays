@@ -4,6 +4,6 @@ const botoes = document.querySelectorAll('.btn');
 function filtarLivros () {
     const elementoBtn = document.getElementById(this.id)
     const categoria = elementoBtn.value
-    let livroFiltrados = livros.filter(livro => livro.categoria == categoria);
-    console.table(livroFiltrados)
+    let livroFiltrados = categoria == 'disponivel' ? livros.filter(livro => livro.quantidade > 0) : livros.filter(livro => livro.categoria == categoria);
+    exibeLivroTela(livroFiltrados);
 }
