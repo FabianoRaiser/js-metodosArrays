@@ -1,5 +1,8 @@
+const elementoInsertLivros = document.getElementById('livros');
+const elementValorLivrosDisponiveis = document.getElementById('valor_total_livros_disponiveis');
 
 function exibeLivroTela(listaLivros) {
+    elementValorLivrosDisponiveis.innerHTML = '';
     elementoInsertLivros.innerHTML = '';
     listaLivros.forEach(livro => {
       // let disponibilidade = verificaDisponibilidade(livro);
